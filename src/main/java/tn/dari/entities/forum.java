@@ -12,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class forum implements Serializable {
+public class Forum implements Serializable {
 /**
 	 * 
 	 */
@@ -26,7 +26,7 @@ private String description;
 @Temporal(TemporalType.DATE)
 private Date date;
 private String photo;
-public forum(int id, String sujet, String description, Date date, String photo) {
+public Forum(int id, String sujet, String description, Date date, String photo) {
 	super();
 	this.id = id;
 	this.sujet = sujet;

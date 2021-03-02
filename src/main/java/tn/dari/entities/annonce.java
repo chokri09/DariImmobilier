@@ -22,7 +22,7 @@ import javax.persistence.Table;
 		name = "TypeAnnoce",
 		discriminatorType = DiscriminatorType.STRING
 		)
-public abstract class annonce implements Serializable {
+public abstract class Annonce implements Serializable {
 	
 	/**
 	 * 
@@ -74,9 +74,9 @@ public abstract class annonce implements Serializable {
 
 	
 	@OneToOne
-	private assurence assur;
+	private Assurence assur;
 
-	public annonce(int id, String title, Payement payement, String adresse, String video, double price,
+	public Annonce(int id, String title, Payement payement, String adresse, String video, double price,
 			float innerSurface, float planeSurface, int roomNumber, float statePrice, Date createdAt,
 			String photoIdentity, String engagementLettre, Boolean favoriteAnnonce) {
 		super();

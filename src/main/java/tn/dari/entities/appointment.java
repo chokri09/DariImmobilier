@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="T_Appointement")
-public class appointment implements Serializable {
+public class Appointment implements Serializable {
 
 	/**
 	 * 
@@ -29,7 +29,7 @@ public class appointment implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date dateRendezVous ;
 	private boolean valid ;
-	public appointment(int id, int idRec, int idSend, Date dateRendezVous, boolean valid) {
+	public Appointment(int id, int idRec, int idSend, Date dateRendezVous, boolean valid) {
 		super();
 		this.id = id;
 		this.idRec = idRec;

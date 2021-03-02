@@ -12,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class subscription implements Serializable {
+public class Subscription implements Serializable {
 	
 	/**
 	 * 
@@ -29,7 +29,7 @@ public class subscription implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date endDate;
 	private float price;
-	public subscription(int id, Date startdate, Date endDate, float price) {
+	public Subscription(int id, Date startdate, Date endDate, float price) {
 		super();
 		this.id = id;
 		Startdate = startdate;

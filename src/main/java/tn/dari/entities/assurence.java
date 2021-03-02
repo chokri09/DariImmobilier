@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class assurence implements Serializable{
+public class Assurence implements Serializable{
 	
 /**
 	 * 
@@ -26,7 +26,7 @@ private String description;
 private String contact;
 private String email;
 @OneToOne(mappedBy="assur")
-private annonce an;
+private Annonce an;
 
 public int getId() {
 	return id;
@@ -58,7 +58,7 @@ public String getEmail() {
 public void setEmail(String email) {
 	this.email = email;
 }
-public assurence(int id, String title, String description, String contact, String email) {
+public Assurence(int id, String title, String description, String contact, String email) {
 	super();
 	this.id = id;
 	this.title = title;

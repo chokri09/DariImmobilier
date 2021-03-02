@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="T_User")
-public class user implements Serializable {
+public class User implements Serializable {
 	
 	/**
 	 * 
@@ -48,55 +48,55 @@ public class user implements Serializable {
 	
 	//one to many unidirectionnel 
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<reclamation> rec;
+	private Set<Reclamation> rec;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<annonce> ann;
+	private Set<Annonce> ann;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<appointment> app;
+	private Set<Appointment> app;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<commentaire> comntr;
+	private Set<Commentaire> comntr;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<annonceMeuble> annMeuble;
+	private Set<AnnonceMeuble> annMeuble;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<forum> forr;
+	private Set<Forum> forr;
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<assurence> assur;
+	private Set<Assurence> assur;
 	
-	public Set<annonceMeuble> getAnnMeuble() {
+	public Set<AnnonceMeuble> getAnnMeuble() {
 		return annMeuble;
 	}
 
-	public void setAnnMeuble(Set<annonceMeuble> annMeuble) {
+	public void setAnnMeuble(Set<AnnonceMeuble> annMeuble) {
 		this.annMeuble = annMeuble;
 	}
 
-	public Set<assurence> getAssur() {
+	public Set<Assurence> getAssur() {
 		return assur;
 	}
 
-	public void setAssur(Set<assurence> assur) {
+	public void setAssur(Set<Assurence> assur) {
 		this.assur = assur;
 	}
 
-	public Set<notification> getNotif() {
+	public Set<Notification> getNotif() {
 		return notif;
 	}
 
-	public void setNotif(Set<notification> notif) {
+	public void setNotif(Set<Notification> notif) {
 		this.notif = notif;
 	}
 
 	@OneToOne
-	private subscription subs;
+	private Subscription subs;
 	
 	@ManyToMany(cascade=CascadeType.ALL)
-	private Set<notification> notif ;
+	private Set<Notification> notif ;
 
 	public int getId() {
 		return id;
@@ -115,10 +115,10 @@ public class user implements Serializable {
 				+ subs + "]";
 	}
 
-	public user(int id, String picture, String firstName, String lastName, String email, String username,
+	public User(int id, String picture, String firstName, String lastName, String email, String username,
 			String password, boolean isActif, String telephone, Gender gender, String adresse, Role role,
-			Set<reclamation> rec, Set<annonce> ann, Set<appointment> app, Set<commentaire> comntr, Set<forum> forr,
-			subscription subs) {
+			Set<Reclamation> rec, Set<Annonce> ann, Set<Appointment> app, Set<Commentaire> comntr, Set<Forum> forr,
+			Subscription subs) {
 		super();
 		this.id = id;
 		this.picture = picture;
@@ -228,51 +228,51 @@ public class user implements Serializable {
 		this.role = role;
 	}
 
-	public Set<reclamation> getRec() {
+	public Set<Reclamation> getRec() {
 		return rec;
 	}
 
-	public void setRec(Set<reclamation> rec) {
+	public void setRec(Set<Reclamation> rec) {
 		this.rec = rec;
 	}
 
-	public Set<annonce> getAnn() {
+	public Set<Annonce> getAnn() {
 		return ann;
 	}
 
-	public void setAnn(Set<annonce> ann) {
+	public void setAnn(Set<Annonce> ann) {
 		this.ann = ann;
 	}
 
-	public Set<appointment> getApp() {
+	public Set<Appointment> getApp() {
 		return app;
 	}
 
-	public void setApp(Set<appointment> app) {
+	public void setApp(Set<Appointment> app) {
 		this.app = app;
 	}
 
-	public Set<commentaire> getComntr() {
+	public Set<Commentaire> getComntr() {
 		return comntr;
 	}
 
-	public void setComntr(Set<commentaire> comntr) {
+	public void setComntr(Set<Commentaire> comntr) {
 		this.comntr = comntr;
 	}
 
-	public Set<forum> getForr() {
+	public Set<Forum> getForr() {
 		return forr;
 	}
 
-	public void setForr(Set<forum> forr) {
+	public void setForr(Set<Forum> forr) {
 		this.forr = forr;
 	}
 
-	public subscription getSubs() {
+	public Subscription getSubs() {
 		return subs;
 	}
 
-	public void setSubs(subscription subs) {
+	public void setSubs(Subscription subs) {
 		this.subs = subs;
 	}
 	

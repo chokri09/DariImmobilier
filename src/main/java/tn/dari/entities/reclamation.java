@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="T_Reclamation")
-public class reclamation implements Serializable {
+public class Reclamation implements Serializable {
 	
 	/**
 	 * 
@@ -32,7 +32,7 @@ public class reclamation implements Serializable {
 	private String descr;
 	@Enumerated(value =EnumType.STRING) 
 	private Typerec type;
-	public reclamation(int id, String sujet, String descr, Typerec type) {
+	public Reclamation(int id, String sujet, String descr, Typerec type) {
 		super();
 		this.id = id;
 		this.sujet = sujet;

@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 @Entity
-public class commentaire implements Serializable{
+public class Commentaire implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
@@ -19,7 +19,7 @@ public class commentaire implements Serializable{
 	private String Content;
 	@Temporal(TemporalType.DATE)
 	private Date date ;
-	public commentaire(int id, String content, Date date) {
+	public Commentaire(int id, String content, Date date) {
 		super();
 		this.id = id;
 		Content = content;

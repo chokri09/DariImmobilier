@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="T_AnnoceMeuble")
-public class annonceMeuble implements Serializable{
+public class AnnonceMeuble implements Serializable{
 
 	/**
 	 * 
@@ -77,7 +77,7 @@ public Date getDate() {
 public void setDate(Date date) {
 	this.date = date;
 }
-public annonceMeuble(int id, float price, String photo, String description, String state, String categorie, Date date) {
+public AnnonceMeuble(int id, float price, String photo, String description, String state, String categorie, Date date) {
 	super();
 	this.id = id;
 	this.price = price;

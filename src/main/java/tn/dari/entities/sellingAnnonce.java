@@ -7,9 +7,9 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value = "selling")
-public class sellingAnnonce extends annonce {
+public class SellingAnnonce extends Annonce {
 
-	public sellingAnnonce(int id, String title, Payement payement, String adresse, String video, double price,
+	public SellingAnnonce(int id, String title, Payement payement, String adresse, String video, double price,
 			float innerSurface, float planeSurface, int roomNumber, float statePrice, Date createdAt,
 			String photoIdentity, String engagementLettre, Boolean favoriteAnnonce) {
 		super(id, title, payement, adresse, video, price, innerSurface, planeSurface, roomNumber, statePrice, createdAt,

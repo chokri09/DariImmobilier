@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="T_Notification")
-public class notification implements Serializable {
+public class Notification implements Serializable {
 	
 	/**
 	 * 
@@ -34,7 +34,7 @@ public class notification implements Serializable {
 	private String title;
 	
 	@ManyToMany(mappedBy="notif",cascade=CascadeType.ALL)
-	private Set<user> usr;
+	private Set<User> usr;
 	
 	@Override
 	public String toString() {
@@ -64,21 +64,21 @@ public class notification implements Serializable {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public notification(int id, Date dateNotif, String desc, String title) {
+	public Notification(int id, Date dateNotif, String desc, String title) {
 		super();
 		this.id = id;
 		this.dateNotif = dateNotif;
 		this.descrp = descrp;
 		this.title = title;
 	}
-	public notification( Date dateNotif, String desc, String title) {
+	public Notification( Date dateNotif, String desc, String title) {
 		super();
 		
 		this.dateNotif = dateNotif;
 		this.descrp = descrp;
 		this.title = title;
 	}
-	public notification() {
+	public Notification() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
