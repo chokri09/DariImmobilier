@@ -10,5 +10,7 @@ public interface IannonceRentingService {
 	public void updateRentingAnnonce(RentingAnnonce ann ,int id);
 	public void DeleteRentingAnnonce(int id);
 	public List<RentingAnnonce> retreiveAllRentingAnnonce() ;
+	void acceptAnnonceJPQL(int annId);
+	
 	
 }

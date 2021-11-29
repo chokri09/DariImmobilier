@@ -3,16 +3,20 @@ package tn.dari.entities;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+
 
 
 @Entity
@@ -30,46 +34,34 @@ public abstract class Annonce implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
 	private int id;
 	
-	@Column(name="title")
 	private String title ;
 	
-	@Column(name="payement")
-	private Payement payement;
-	
-	@Column(name="adresse")
 	private String adresse;
 	
-	@Column(name="video")
 	private String video;
 	
-	@Column(name="price")
 	private double price ;
 	
-	@Column(name="innerSurface")
 	private float innerSurface;
 	
-	@Column(name="planeSurface")
 	private float planeSurface;
 	
-	@Column(name="roomNumber")
 	private int roomNumber;
 	
-	@Column(name="statePrice")
 	private float statePrice ;
 	private Date CreatedAt;
 	
-	@Column(name="photoIdentity")
 	private String photoIdentity ;
 	
-	@Column(name="engagementLettre")
     private String engagementLettre ;
 	
 	
-	@Column(name="favoriteAnnonce")
     private Boolean favoriteAnnonce ;
+	
+    @Enumerated(EnumType.STRING)
+	AdState AdState;
 
 	
 	@OneToOne
@@ -81,13 +73,13 @@ public abstract class Annonce implements Serializable {
 
 
 
-	public Annonce(int id, String title, Payement payement, String adresse, String video, double price,
+	public Annonce(int id, String title, AdState payement, String adresse, String video, double price,
 			float innerSurface, float planeSurface, int roomNumber, float statePrice, Date createdAt,
 			String photoIdentity, String engagementLettre, Boolean favoriteAnnonce) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.payement = payement;
+		this.AdState = AdState;
 		this.adresse = adresse;
 		this.video = video;
 		this.price = price;
@@ -123,13 +115,19 @@ public abstract class Annonce implements Serializable {
 	}
 
 
-	public Payement getPayement() {
-		return payement;
+	public AdState getAdState() {
+		return AdState;
 	}
 
 
-	public void setPayement(Payement payement) {
-		this.payement = payement;
+	public void setAdState(AdState adState) {
+		AdState = adState;
+	}
+
+
+
+	public void setPayement(AdState adState) {
+		this.AdState = adState;
 	}
 
 
@@ -245,12 +243,13 @@ public abstract class Annonce implements Serializable {
 
 	@Override
 	public String toString() {
-		return "annonce [id=" + id + ", title=" + title + ", payement=" + payement + ", adresse=" + adresse + ", video="
+		return "annonce [id=" + id + ", title=" + title + ", payement=" + AdState + ", adresse=" + adresse + ", video="
 				+ video + ", price=" + price + ", innerSurface=" + innerSurface + ", planeSurface=" + planeSurface
 				+ ", roomNumber=" + roomNumber + ", statePrice=" + statePrice + ", CreatedAt=" + CreatedAt
 				+ ", photoIdentity=" + photoIdentity + ", engagementLettre=" + engagementLettre + ", favoriteAnnonce="
 				+ favoriteAnnonce + "]";
 	}
-	
+	@ManyToOne()
+	private User user;
 
 }

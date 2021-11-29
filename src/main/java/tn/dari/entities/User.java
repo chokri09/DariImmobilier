@@ -27,6 +27,7 @@ public class User implements Serializable {
 	 * 
 	 * 
 	 * 
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -54,7 +55,7 @@ public class User implements Serializable {
 	@OneToMany(cascade=CascadeType.ALL)
 	private Set<Reclamation> rec;
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(cascade=CascadeType.ALL,mappedBy = "user")
 	private Set<Annonce> ann;
 	
 	@OneToMany(cascade=CascadeType.ALL)
@@ -117,6 +118,9 @@ public class User implements Serializable {
 				+ ", telephone=" + telephone + ", gender=" + gender + ", adresse=" + adresse + ", role=" + role
 				+ ", rec=" + rec + ", ann=" + ann + ", app=" + app + ", comntr=" + comntr + ", forr=" + forr + ", subs="
 				+ subs + "]";
+	}
+	public User() {
+		
 	}
 
 	public User(int id, String picture, String firstName, String lastName, String email, String username,
